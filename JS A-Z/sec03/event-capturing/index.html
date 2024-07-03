@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>event-bubbling</title>
+    <style>
+        body * {
+            margin: 10px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<form>Form
+    <div>Div
+        <p>P</p>
+    </div>
+</form>
+<script>
+    for (let element of document.querySelectorAll('*')){
+        element.addEventListener('click', e => alert(`캡처링: ${element.tagName}`), true);
+        element.addEventListener('click', e => alert(`버블링: ${element.tagName}`))
+    }
+</script>
+</body>
+</html>
