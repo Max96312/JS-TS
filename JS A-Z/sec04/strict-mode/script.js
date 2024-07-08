@@ -5,7 +5,7 @@
 //     return a + b;
 // }
 //
-// class Cat {
+// classes Cat {
 //
 // }
 
