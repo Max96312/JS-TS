@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./build/js",
+    "target": "ES6",
+    "noEmitOnError": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "strict": true,
+    "baseUrl": "./",
+    "paths": {
+      "@src/*": [
+        "src/*"
+      ]
+    },
+    "isolatedModules": true, // 모든 소스코드 파일을 모듈로 만들기를 강제함
+    "removeComments": true, //주석 제거
+    "allowJs": true, // JS와 연동 허용
+    "checkJs": true, // allowJs와 함께 작동, JS Error 확인
+    "forceConsistentCasingInFileNames": false, // 파일의 이름 대소문자 구별
+    "declaration": true
+  },
+  "include": [
+    "./src/**/*.ts"
+  ]
+}
