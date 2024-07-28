@@ -1,4 +1,4 @@
-import List from "../model/List.ts";
+import List from "../models/List.ts";
 
 interface DOMList {
     ul: HTMLUListElement;
@@ -23,7 +23,7 @@ export default class ListTemplate implements DOMList {
         this.clear();
 
         fullLIst.list.forEach(item => {
-            const liEl = document.createElement('li') as HTMLElement;
+            const liEl = document.createElement('li') as HTMLLIElement;
             liEl.className = 'item';
 
             const checkEl = document.createElement('input') as HTMLInputElement;

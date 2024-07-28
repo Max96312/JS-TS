@@ -4,7 +4,7 @@ interface IList {
     list: IListItem[];
     load(): void;
     save(): void;
-    clear(): void;
+    clearList(): void;
     addItem(itemObj: IListItem): void;
     removeItem(id: string): void;
 }
@@ -15,26 +15,22 @@ export default class List implements IList{
 
     private constructor(
         private _list: IListItem[] = []
-    ) {
-
-    }
+    ) {}
 
     get list(): IListItem[]{
         return this._list;
     }
 
-    get load(): void{
+    load(): void{
         const storedList: string | null = localStorage.getItem('myList');
 
         if(typeof storedList !== 'string') return;
 
-        const parsedList:{
+        const parsedList: {
             _id: string,
             _item: string,
-            checked: boolean
+            _checked: boolean
         }[] = JSON.parse(storedList);
-
-
 
         // listItem 인스턴스 객체 생성 => list 인스턴스 객체에 넣어주기
 
@@ -42,7 +38,7 @@ export default class List implements IList{
             const newListItem = new ListItem(
                 itemObj._id,
                 itemObj._item,
-                itemObj.checked
+                itemObj._checked
             );
 
             List.instance.addItem(newListItem);
